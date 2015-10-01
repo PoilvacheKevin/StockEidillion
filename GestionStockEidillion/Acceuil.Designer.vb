@@ -22,26 +22,27 @@ Partial Class Form_Acceuil
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TB_User = New System.Windows.Forms.TextBox()
+        Me.TB_Password = New System.Windows.Forms.TextBox()
         Me.LB_Name = New System.Windows.Forms.Label()
         Me.LB_Password = New System.Windows.Forms.Label()
         Me.BT_Valider = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'TB_User
         '
-        Me.TextBox1.Location = New System.Drawing.Point(97, 81)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.TB_User.Location = New System.Drawing.Point(97, 81)
+        Me.TB_User.Name = "TB_User"
+        Me.TB_User.Size = New System.Drawing.Size(100, 20)
+        Me.TB_User.TabIndex = 0
         '
-        'TextBox2
+        'TB_Password
         '
-        Me.TextBox2.Location = New System.Drawing.Point(97, 156)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.TB_Password.Location = New System.Drawing.Point(97, 156)
+        Me.TB_Password.Name = "TB_Password"
+        Me.TB_Password.Size = New System.Drawing.Size(100, 20)
+        Me.TB_Password.TabIndex = 1
+        Me.TB_Password.UseSystemPasswordChar = True
         '
         'LB_Name
         '
@@ -78,16 +79,16 @@ Partial Class Form_Acceuil
         Me.Controls.Add(Me.BT_Valider)
         Me.Controls.Add(Me.LB_Password)
         Me.Controls.Add(Me.LB_Name)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TB_Password)
+        Me.Controls.Add(Me.TB_User)
         Me.Name = "Form_Acceuil"
         Me.Text = "Acceuil"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TB_User As System.Windows.Forms.TextBox
+    Friend WithEvents TB_Password As System.Windows.Forms.TextBox
     Friend WithEvents LB_Name As System.Windows.Forms.Label
     Friend WithEvents LB_Password As System.Windows.Forms.Label
     Friend WithEvents BT_Valider As System.Windows.Forms.Button

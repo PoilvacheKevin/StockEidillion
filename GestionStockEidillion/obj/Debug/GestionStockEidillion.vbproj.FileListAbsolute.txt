@@ -1,0 +1,12 @@
+c:\users\smoa\documents\visual studio 2013\Projects\GestionStockEidillion\GestionStockEidillion\bin\Debug\GestionStockEidillion.exe.config
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\bin\Debug\GestionStockEidillion.exe.config
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\bin\Debug\GestionStockEidillion.exe
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\bin\Debug\GestionStockEidillion.pdb
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\bin\Debug\GestionStockEidillion.xml
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.Form_Acceuil.resources
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.Resources.resources
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.Form_Stocks.resources
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.vbproj.GenerateResource.Cache
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.exe
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.xml
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.pdb

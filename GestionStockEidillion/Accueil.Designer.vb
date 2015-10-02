@@ -82,7 +82,7 @@ Partial Class Form_Acceuil
         Me.Controls.Add(Me.TB_Password)
         Me.Controls.Add(Me.TB_User)
         Me.Name = "Form_Acceuil"
-        Me.Text = "Acceuil"
+        Me.Text = "Accueil"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

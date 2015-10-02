@@ -8,17 +8,14 @@ Public Class Form_Acceuil
         If Test = True Then
             Form_Stocks.Show()
         Else
-            MessageBox.Show("Mot de Passe ou Pseudonyme incorrect !")
+            TB_Password.Text = ""
+            TB_User.Text = ""
         End If
     End Sub
 
     Private Function Connect() As Boolean
-        Dim DatabaseName As String = "EidillionStock"
-        Dim Server As String = "127.0.0.1"
-        Dim UserName As String = TB_User.Text
-        Dim Password As String = TB_Password.Text
-        If Not Connexion Is Nothing Then Connexion.Close()
-        Connexion.ConnectionString = String.Format("server={0}; user id={1}; password={2}; database={3}; pooling=false", Server, UserName, Password, DatabaseName)
+        Dim cs As String = "Database = EidillionStock;Data Source=127.0.0.1;" & "User Id=" & TB_User.Text & ";Password=" & TB_Password.Text & ";"
+        Dim Connexion As New MySqlConnection(cs)
         Try
             Connexion.Open()
 

@@ -22,3 +22,4 @@ C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStock
 C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.Resources.resources
 C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.Form_Stocks.resources
 C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.vbproj.GenerateResource.Cache
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Debug\GestionStockEidillion.vbprojResolveAssemblyReference.cache

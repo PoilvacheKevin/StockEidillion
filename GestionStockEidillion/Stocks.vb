@@ -1,5 +1,6 @@
 ﻿Public Class Form_Stocks
 
+    Dim MySQLCom As New SQLCom()
     Private Sub LV_StockLive_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LV_StockLive.SelectedIndexChanged
 
     End Sub
@@ -62,4 +63,20 @@
         LV_CurrentDeliversiesClients.LabelEdit = False
     End Sub
 
+    Private Sub BT_NewClient_Click(sender As Object, e As EventArgs) Handles BT_NewClient.Click
+        If TB_NewAdresseClient.Text <> "" And TB_NewClient.Text <> "" And TB_NewClientTVA.Text <> "" Then
+            Dim Verification As Boolean
+            Verification = MySQLCom.AddClient(TB_NewClient.Text, TB_NewAdresseClient.Text, TB_NewClientPhone.Text, TB_NewClientTVA.Text, TB_NewClientMail.Text)
+            If Verification = True Then
+                MessageBox.Show("Elément Enregistré")
+                TB_NewClient.Text = ""
+                TB_NewAdresseClient.Text = ""
+                TB_NewClientPhone.Text = ""
+                TB_NewClientTVA.Text = ""
+                TB_NewClientMail.Text = ""
+            End If
+        Else
+            MessageBox.Show("Donnée(s) Manquante(s) Pour Ajouter Client à la DataBase !")
+        End If
+    End Sub
 End Class

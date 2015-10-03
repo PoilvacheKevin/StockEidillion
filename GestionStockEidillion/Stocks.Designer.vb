@@ -36,6 +36,14 @@ Partial Class Form_Stocks
         Me.LB_StockLive = New System.Windows.Forms.Label()
         Me.LV_StockLive = New System.Windows.Forms.ListView()
         Me.TP_Provider = New System.Windows.Forms.TabPage()
+        Me.BT_NewProductConfirm = New System.Windows.Forms.Button()
+        Me.CB_NewProductProvider = New System.Windows.Forms.ComboBox()
+        Me.LB_NewProductProvider = New System.Windows.Forms.Label()
+        Me.TB_NewProductReference = New System.Windows.Forms.TextBox()
+        Me.LB_NewProductReference = New System.Windows.Forms.Label()
+        Me.TB_NewProductName = New System.Windows.Forms.TextBox()
+        Me.LB_NewProductName = New System.Windows.Forms.Label()
+        Me.CB_NewProductDeliveryProvider = New System.Windows.Forms.ComboBox()
         Me.BT_ConfirmNewDelivery = New System.Windows.Forms.Button()
         Me.LB_CurrentDeliveryProvider = New System.Windows.Forms.Label()
         Me.LV_CurrentDeliversiesProvider = New System.Windows.Forms.ListView()
@@ -66,6 +74,19 @@ Partial Class Form_Stocks
         Me.LB_DateEstimationDeliveryProvider = New System.Windows.Forms.Label()
         Me.LB_DeliveryLastTime = New System.Windows.Forms.Label()
         Me.TP_Client = New System.Windows.Forms.TabPage()
+        Me.CB_NewNewClient = New System.Windows.Forms.ComboBox()
+        Me.CB_NewProductDeliveryClient = New System.Windows.Forms.ComboBox()
+        Me.TB_NewClientPhone = New System.Windows.Forms.TextBox()
+        Me.LB_NewClientPhone = New System.Windows.Forms.Label()
+        Me.TB_NewClientMail = New System.Windows.Forms.TextBox()
+        Me.LB_NewClientMail = New System.Windows.Forms.Label()
+        Me.BT_NewClient = New System.Windows.Forms.Button()
+        Me.TB_NewAdresseClient = New System.Windows.Forms.TextBox()
+        Me.LB_NewAdresseClient = New System.Windows.Forms.Label()
+        Me.TB_NewClientTVA = New System.Windows.Forms.TextBox()
+        Me.LB_NewClientTVA = New System.Windows.Forms.Label()
+        Me.TB_NewClient = New System.Windows.Forms.TextBox()
+        Me.LB_NewClient = New System.Windows.Forms.Label()
         Me.LB_CurrentDeliveryClient = New System.Windows.Forms.Label()
         Me.LV_CurrentDeliversiesClients = New System.Windows.Forms.ListView()
         Me.BT_ConfirmNewDeliveryClient = New System.Windows.Forms.Button()
@@ -94,27 +115,6 @@ Partial Class Form_Stocks
         Me.TB_LastDeliveryClient = New System.Windows.Forms.TextBox()
         Me.LB_LastDeliveryClient = New System.Windows.Forms.Label()
         Me.TP_Estimation = New System.Windows.Forms.TabPage()
-        Me.LB_NewClient = New System.Windows.Forms.Label()
-        Me.TB_NewClient = New System.Windows.Forms.TextBox()
-        Me.LB_NewClientTVA = New System.Windows.Forms.Label()
-        Me.TB_NewClientTVA = New System.Windows.Forms.TextBox()
-        Me.LB_NewAdresseClient = New System.Windows.Forms.Label()
-        Me.TB_NewAdresseClient = New System.Windows.Forms.TextBox()
-        Me.BT_NewClient = New System.Windows.Forms.Button()
-        Me.LB_NewClientMail = New System.Windows.Forms.Label()
-        Me.TB_NewClientMail = New System.Windows.Forms.TextBox()
-        Me.LB_NewClientPhone = New System.Windows.Forms.Label()
-        Me.TB_NewClientPhone = New System.Windows.Forms.TextBox()
-        Me.CB_NewProductDeliveryClient = New System.Windows.Forms.ComboBox()
-        Me.CB_NewProductDeliveryProvider = New System.Windows.Forms.ComboBox()
-        Me.CB_NewNewClient = New System.Windows.Forms.ComboBox()
-        Me.LB_NewProductName = New System.Windows.Forms.Label()
-        Me.TB_NewProductName = New System.Windows.Forms.TextBox()
-        Me.LB_NewProductReference = New System.Windows.Forms.Label()
-        Me.TB_NewProductReference = New System.Windows.Forms.TextBox()
-        Me.LB_NewProductProvider = New System.Windows.Forms.Label()
-        Me.CB_NewProductProvider = New System.Windows.Forms.ComboBox()
-        Me.BT_NewProductConfirm = New System.Windows.Forms.Button()
         Me.TabC_Stock.SuspendLayout()
         Me.TP_StockShow.SuspendLayout()
         Me.TP_Provider.SuspendLayout()
@@ -299,12 +299,80 @@ Partial Class Form_Stocks
         Me.TP_Provider.Text = "Commandes Fournisseurs"
         Me.TP_Provider.UseVisualStyleBackColor = True
         '
+        'BT_NewProductConfirm
+        '
+        Me.BT_NewProductConfirm.Location = New System.Drawing.Point(677, 95)
+        Me.BT_NewProductConfirm.Name = "BT_NewProductConfirm"
+        Me.BT_NewProductConfirm.Size = New System.Drawing.Size(159, 23)
+        Me.BT_NewProductConfirm.TabIndex = 10
+        Me.BT_NewProductConfirm.Text = "Confirmer le nouveau produit"
+        Me.BT_NewProductConfirm.UseVisualStyleBackColor = True
+        '
+        'CB_NewProductProvider
+        '
+        Me.CB_NewProductProvider.Enabled = False
+        Me.CB_NewProductProvider.FormattingEnabled = True
+        Me.CB_NewProductProvider.Location = New System.Drawing.Point(550, 96)
+        Me.CB_NewProductProvider.Name = "CB_NewProductProvider"
+        Me.CB_NewProductProvider.Size = New System.Drawing.Size(121, 21)
+        Me.CB_NewProductProvider.TabIndex = 9
+        '
+        'LB_NewProductProvider
+        '
+        Me.LB_NewProductProvider.AutoSize = True
+        Me.LB_NewProductProvider.Location = New System.Drawing.Point(477, 100)
+        Me.LB_NewProductProvider.Name = "LB_NewProductProvider"
+        Me.LB_NewProductProvider.Size = New System.Drawing.Size(67, 13)
+        Me.LB_NewProductProvider.TabIndex = 35
+        Me.LB_NewProductProvider.Text = "Fournisseur :"
+        '
+        'TB_NewProductReference
+        '
+        Me.TB_NewProductReference.Location = New System.Drawing.Point(371, 97)
+        Me.TB_NewProductReference.Name = "TB_NewProductReference"
+        Me.TB_NewProductReference.Size = New System.Drawing.Size(100, 20)
+        Me.TB_NewProductReference.TabIndex = 8
+        '
+        'LB_NewProductReference
+        '
+        Me.LB_NewProductReference.AutoSize = True
+        Me.LB_NewProductReference.Location = New System.Drawing.Point(266, 100)
+        Me.LB_NewProductReference.Name = "LB_NewProductReference"
+        Me.LB_NewProductReference.Size = New System.Drawing.Size(102, 13)
+        Me.LB_NewProductReference.TabIndex = 33
+        Me.LB_NewProductReference.Text = "Référence Produit : "
+        '
+        'TB_NewProductName
+        '
+        Me.TB_NewProductName.Location = New System.Drawing.Point(140, 97)
+        Me.TB_NewProductName.Name = "TB_NewProductName"
+        Me.TB_NewProductName.Size = New System.Drawing.Size(120, 20)
+        Me.TB_NewProductName.TabIndex = 7
+        '
+        'LB_NewProductName
+        '
+        Me.LB_NewProductName.AutoSize = True
+        Me.LB_NewProductName.Location = New System.Drawing.Point(10, 100)
+        Me.LB_NewProductName.Name = "LB_NewProductName"
+        Me.LB_NewProductName.Size = New System.Drawing.Size(124, 13)
+        Me.LB_NewProductName.TabIndex = 31
+        Me.LB_NewProductName.Text = "Nouveau Produit : Nom :"
+        '
+        'CB_NewProductDeliveryProvider
+        '
+        Me.CB_NewProductDeliveryProvider.Enabled = False
+        Me.CB_NewProductDeliveryProvider.FormattingEnabled = True
+        Me.CB_NewProductDeliveryProvider.Location = New System.Drawing.Point(8, 255)
+        Me.CB_NewProductDeliveryProvider.Name = "CB_NewProductDeliveryProvider"
+        Me.CB_NewProductDeliveryProvider.Size = New System.Drawing.Size(93, 21)
+        Me.CB_NewProductDeliveryProvider.TabIndex = 14
+        '
         'BT_ConfirmNewDelivery
         '
         Me.BT_ConfirmNewDelivery.Location = New System.Drawing.Point(377, 236)
         Me.BT_ConfirmNewDelivery.Name = "BT_ConfirmNewDelivery"
         Me.BT_ConfirmNewDelivery.Size = New System.Drawing.Size(75, 56)
-        Me.BT_ConfirmNewDelivery.TabIndex = 29
+        Me.BT_ConfirmNewDelivery.TabIndex = 17
         Me.BT_ConfirmNewDelivery.Text = "Confirmer Nouvelle Livraison"
         Me.BT_ConfirmNewDelivery.UseVisualStyleBackColor = True
         '
@@ -330,7 +398,7 @@ Partial Class Form_Stocks
         Me.BT_DeleteDeliveryProvider.Location = New System.Drawing.Point(199, 293)
         Me.BT_DeleteDeliveryProvider.Name = "BT_DeleteDeliveryProvider"
         Me.BT_DeleteDeliveryProvider.Size = New System.Drawing.Size(75, 23)
-        Me.BT_DeleteDeliveryProvider.TabIndex = 26
+        Me.BT_DeleteDeliveryProvider.TabIndex = 19
         Me.BT_DeleteDeliveryProvider.Text = "Supprimer"
         Me.BT_DeleteDeliveryProvider.UseVisualStyleBackColor = True
         '
@@ -339,7 +407,7 @@ Partial Class Form_Stocks
         Me.BT_AcceptDeliveryProvider.Location = New System.Drawing.Point(70, 293)
         Me.BT_AcceptDeliveryProvider.Name = "BT_AcceptDeliveryProvider"
         Me.BT_AcceptDeliveryProvider.Size = New System.Drawing.Size(75, 23)
-        Me.BT_AcceptDeliveryProvider.TabIndex = 25
+        Me.BT_AcceptDeliveryProvider.TabIndex = 18
         Me.BT_AcceptDeliveryProvider.Text = "Ajouter"
         Me.BT_AcceptDeliveryProvider.UseVisualStyleBackColor = True
         '
@@ -356,14 +424,14 @@ Partial Class Form_Stocks
         Me.TB_NewPriceDeliveryProvider.Location = New System.Drawing.Point(246, 255)
         Me.TB_NewPriceDeliveryProvider.Name = "TB_NewPriceDeliveryProvider"
         Me.TB_NewPriceDeliveryProvider.Size = New System.Drawing.Size(100, 20)
-        Me.TB_NewPriceDeliveryProvider.TabIndex = 23
+        Me.TB_NewPriceDeliveryProvider.TabIndex = 16
         '
         'TB_NewQuantityDeliveryProvider
         '
         Me.TB_NewQuantityDeliveryProvider.Location = New System.Drawing.Point(123, 255)
         Me.TB_NewQuantityDeliveryProvider.Name = "TB_NewQuantityDeliveryProvider"
         Me.TB_NewQuantityDeliveryProvider.Size = New System.Drawing.Size(100, 20)
-        Me.TB_NewQuantityDeliveryProvider.TabIndex = 22
+        Me.TB_NewQuantityDeliveryProvider.TabIndex = 15
         '
         'LB_NewPriceDeliveryProvider
         '
@@ -397,21 +465,21 @@ Partial Class Form_Stocks
         Me.TB_NewNewProvider.Location = New System.Drawing.Point(345, 183)
         Me.TB_NewNewProvider.Name = "TB_NewNewProvider"
         Me.TB_NewNewProvider.Size = New System.Drawing.Size(126, 20)
-        Me.TB_NewNewProvider.TabIndex = 17
+        Me.TB_NewNewProvider.TabIndex = 13
         '
         'TB_NewDateProvider
         '
         Me.TB_NewDateProvider.Location = New System.Drawing.Point(188, 183)
         Me.TB_NewDateProvider.Name = "TB_NewDateProvider"
         Me.TB_NewDateProvider.Size = New System.Drawing.Size(133, 20)
-        Me.TB_NewDateProvider.TabIndex = 16
+        Me.TB_NewDateProvider.TabIndex = 12
         '
         'TB_NewRefProvider
         '
         Me.TB_NewRefProvider.Location = New System.Drawing.Point(13, 183)
         Me.TB_NewRefProvider.Name = "TB_NewRefProvider"
         Me.TB_NewRefProvider.Size = New System.Drawing.Size(151, 20)
-        Me.TB_NewRefProvider.TabIndex = 15
+        Me.TB_NewRefProvider.TabIndex = 11
         '
         'LB_NewProviderDeliveryProvider
         '
@@ -445,7 +513,7 @@ Partial Class Form_Stocks
         Me.BT_ConfirmFinishDelivery.Location = New System.Drawing.Point(792, 68)
         Me.BT_ConfirmFinishDelivery.Name = "BT_ConfirmFinishDelivery"
         Me.BT_ConfirmFinishDelivery.Size = New System.Drawing.Size(151, 20)
-        Me.BT_ConfirmFinishDelivery.TabIndex = 11
+        Me.BT_ConfirmFinishDelivery.TabIndex = 6
         Me.BT_ConfirmFinishDelivery.Text = "Confirmer Arrivée"
         Me.BT_ConfirmFinishDelivery.UseVisualStyleBackColor = True
         '
@@ -454,21 +522,21 @@ Partial Class Form_Stocks
         Me.TB_ConfirmProviderDelivery.Location = New System.Drawing.Point(645, 68)
         Me.TB_ConfirmProviderDelivery.Name = "TB_ConfirmProviderDelivery"
         Me.TB_ConfirmProviderDelivery.Size = New System.Drawing.Size(126, 20)
-        Me.TB_ConfirmProviderDelivery.TabIndex = 10
+        Me.TB_ConfirmProviderDelivery.TabIndex = 5
         '
         'TB_ConfirmDateDelivery
         '
         Me.TB_ConfirmDateDelivery.Location = New System.Drawing.Point(429, 68)
         Me.TB_ConfirmDateDelivery.Name = "TB_ConfirmDateDelivery"
         Me.TB_ConfirmDateDelivery.Size = New System.Drawing.Size(133, 20)
-        Me.TB_ConfirmDateDelivery.TabIndex = 9
+        Me.TB_ConfirmDateDelivery.TabIndex = 4
         '
         'TB_ConfirmRefDelivery
         '
         Me.TB_ConfirmRefDelivery.Location = New System.Drawing.Point(170, 68)
         Me.TB_ConfirmRefDelivery.Name = "TB_ConfirmRefDelivery"
         Me.TB_ConfirmRefDelivery.Size = New System.Drawing.Size(151, 20)
-        Me.TB_ConfirmRefDelivery.TabIndex = 8
+        Me.TB_ConfirmRefDelivery.TabIndex = 3
         '
         'LB_ProviderConfirm
         '
@@ -503,7 +571,7 @@ Partial Class Form_Stocks
         Me.TB_EstimationDateDeliveryProvider.Location = New System.Drawing.Point(212, 36)
         Me.TB_EstimationDateDeliveryProvider.Name = "TB_EstimationDateDeliveryProvider"
         Me.TB_EstimationDateDeliveryProvider.Size = New System.Drawing.Size(100, 20)
-        Me.TB_EstimationDateDeliveryProvider.TabIndex = 4
+        Me.TB_EstimationDateDeliveryProvider.TabIndex = 2
         '
         'TB_LastDeliveryEffective
         '
@@ -511,7 +579,7 @@ Partial Class Form_Stocks
         Me.TB_LastDeliveryEffective.Location = New System.Drawing.Point(160, 6)
         Me.TB_LastDeliveryEffective.Name = "TB_LastDeliveryEffective"
         Me.TB_LastDeliveryEffective.Size = New System.Drawing.Size(100, 20)
-        Me.TB_LastDeliveryEffective.TabIndex = 3
+        Me.TB_LastDeliveryEffective.TabIndex = 1
         '
         'Label2
         '
@@ -588,6 +656,111 @@ Partial Class Form_Stocks
         Me.TP_Client.TabIndex = 3
         Me.TP_Client.Text = "Commandes Clients"
         Me.TP_Client.UseVisualStyleBackColor = True
+        '
+        'CB_NewNewClient
+        '
+        Me.CB_NewNewClient.FormattingEnabled = True
+        Me.CB_NewNewClient.Location = New System.Drawing.Point(323, 209)
+        Me.CB_NewNewClient.Name = "CB_NewNewClient"
+        Me.CB_NewNewClient.Size = New System.Drawing.Size(121, 21)
+        Me.CB_NewNewClient.TabIndex = 43
+        '
+        'CB_NewProductDeliveryClient
+        '
+        Me.CB_NewProductDeliveryClient.FormattingEnabled = True
+        Me.CB_NewProductDeliveryClient.Location = New System.Drawing.Point(11, 273)
+        Me.CB_NewProductDeliveryClient.Name = "CB_NewProductDeliveryClient"
+        Me.CB_NewProductDeliveryClient.Size = New System.Drawing.Size(99, 21)
+        Me.CB_NewProductDeliveryClient.TabIndex = 42
+        '
+        'TB_NewClientPhone
+        '
+        Me.TB_NewClientPhone.Location = New System.Drawing.Point(991, 103)
+        Me.TB_NewClientPhone.Name = "TB_NewClientPhone"
+        Me.TB_NewClientPhone.Size = New System.Drawing.Size(100, 20)
+        Me.TB_NewClientPhone.TabIndex = 41
+        '
+        'LB_NewClientPhone
+        '
+        Me.LB_NewClientPhone.AutoSize = True
+        Me.LB_NewClientPhone.Location = New System.Drawing.Point(957, 105)
+        Me.LB_NewClientPhone.Name = "LB_NewClientPhone"
+        Me.LB_NewClientPhone.Size = New System.Drawing.Size(28, 13)
+        Me.LB_NewClientPhone.TabIndex = 40
+        Me.LB_NewClientPhone.Text = "Tel :"
+        '
+        'TB_NewClientMail
+        '
+        Me.TB_NewClientMail.Location = New System.Drawing.Point(795, 102)
+        Me.TB_NewClientMail.Name = "TB_NewClientMail"
+        Me.TB_NewClientMail.Size = New System.Drawing.Size(156, 20)
+        Me.TB_NewClientMail.TabIndex = 39
+        '
+        'LB_NewClientMail
+        '
+        Me.LB_NewClientMail.AutoSize = True
+        Me.LB_NewClientMail.Location = New System.Drawing.Point(757, 106)
+        Me.LB_NewClientMail.Name = "LB_NewClientMail"
+        Me.LB_NewClientMail.Size = New System.Drawing.Size(32, 13)
+        Me.LB_NewClientMail.TabIndex = 38
+        Me.LB_NewClientMail.Text = "Mail :"
+        '
+        'BT_NewClient
+        '
+        Me.BT_NewClient.Location = New System.Drawing.Point(1106, 100)
+        Me.BT_NewClient.Name = "BT_NewClient"
+        Me.BT_NewClient.Size = New System.Drawing.Size(148, 23)
+        Me.BT_NewClient.TabIndex = 36
+        Me.BT_NewClient.Text = "Ajouter Nouveau Client"
+        Me.BT_NewClient.UseVisualStyleBackColor = True
+        '
+        'TB_NewAdresseClient
+        '
+        Me.TB_NewAdresseClient.Location = New System.Drawing.Point(519, 102)
+        Me.TB_NewAdresseClient.Name = "TB_NewAdresseClient"
+        Me.TB_NewAdresseClient.Size = New System.Drawing.Size(232, 20)
+        Me.TB_NewAdresseClient.TabIndex = 35
+        '
+        'LB_NewAdresseClient
+        '
+        Me.LB_NewAdresseClient.AutoSize = True
+        Me.LB_NewAdresseClient.Location = New System.Drawing.Point(462, 106)
+        Me.LB_NewAdresseClient.Name = "LB_NewAdresseClient"
+        Me.LB_NewAdresseClient.Size = New System.Drawing.Size(51, 13)
+        Me.LB_NewAdresseClient.TabIndex = 34
+        Me.LB_NewAdresseClient.Text = "Adresse :"
+        '
+        'TB_NewClientTVA
+        '
+        Me.TB_NewClientTVA.Location = New System.Drawing.Point(349, 102)
+        Me.TB_NewClientTVA.Name = "TB_NewClientTVA"
+        Me.TB_NewClientTVA.Size = New System.Drawing.Size(107, 20)
+        Me.TB_NewClientTVA.TabIndex = 33
+        '
+        'LB_NewClientTVA
+        '
+        Me.LB_NewClientTVA.AutoSize = True
+        Me.LB_NewClientTVA.Location = New System.Drawing.Point(294, 106)
+        Me.LB_NewClientTVA.Name = "LB_NewClientTVA"
+        Me.LB_NewClientTVA.Size = New System.Drawing.Size(49, 13)
+        Me.LB_NewClientTVA.TabIndex = 32
+        Me.LB_NewClientTVA.Text = "N° TVA :"
+        '
+        'TB_NewClient
+        '
+        Me.TB_NewClient.Location = New System.Drawing.Point(127, 103)
+        Me.TB_NewClient.Name = "TB_NewClient"
+        Me.TB_NewClient.Size = New System.Drawing.Size(161, 20)
+        Me.TB_NewClient.TabIndex = 31
+        '
+        'LB_NewClient
+        '
+        Me.LB_NewClient.AutoSize = True
+        Me.LB_NewClient.Location = New System.Drawing.Point(8, 106)
+        Me.LB_NewClient.Name = "LB_NewClient"
+        Me.LB_NewClient.Size = New System.Drawing.Size(120, 13)
+        Me.LB_NewClient.TabIndex = 30
+        Me.LB_NewClient.Text = "Nouveau Client : Nom : "
         '
         'LB_CurrentDeliveryClient
         '
@@ -822,177 +995,6 @@ Partial Class Form_Stocks
         Me.TP_Estimation.TabIndex = 4
         Me.TP_Estimation.Text = "Stock Estimation"
         Me.TP_Estimation.UseVisualStyleBackColor = True
-        '
-        'LB_NewClient
-        '
-        Me.LB_NewClient.AutoSize = True
-        Me.LB_NewClient.Location = New System.Drawing.Point(8, 106)
-        Me.LB_NewClient.Name = "LB_NewClient"
-        Me.LB_NewClient.Size = New System.Drawing.Size(120, 13)
-        Me.LB_NewClient.TabIndex = 30
-        Me.LB_NewClient.Text = "Nouveau Client : Nom : "
-        '
-        'TB_NewClient
-        '
-        Me.TB_NewClient.Location = New System.Drawing.Point(127, 103)
-        Me.TB_NewClient.Name = "TB_NewClient"
-        Me.TB_NewClient.Size = New System.Drawing.Size(161, 20)
-        Me.TB_NewClient.TabIndex = 31
-        '
-        'LB_NewClientTVA
-        '
-        Me.LB_NewClientTVA.AutoSize = True
-        Me.LB_NewClientTVA.Location = New System.Drawing.Point(294, 106)
-        Me.LB_NewClientTVA.Name = "LB_NewClientTVA"
-        Me.LB_NewClientTVA.Size = New System.Drawing.Size(49, 13)
-        Me.LB_NewClientTVA.TabIndex = 32
-        Me.LB_NewClientTVA.Text = "N° TVA :"
-        '
-        'TB_NewClientTVA
-        '
-        Me.TB_NewClientTVA.Location = New System.Drawing.Point(349, 102)
-        Me.TB_NewClientTVA.Name = "TB_NewClientTVA"
-        Me.TB_NewClientTVA.Size = New System.Drawing.Size(107, 20)
-        Me.TB_NewClientTVA.TabIndex = 33
-        '
-        'LB_NewAdresseClient
-        '
-        Me.LB_NewAdresseClient.AutoSize = True
-        Me.LB_NewAdresseClient.Location = New System.Drawing.Point(462, 106)
-        Me.LB_NewAdresseClient.Name = "LB_NewAdresseClient"
-        Me.LB_NewAdresseClient.Size = New System.Drawing.Size(51, 13)
-        Me.LB_NewAdresseClient.TabIndex = 34
-        Me.LB_NewAdresseClient.Text = "Adresse :"
-        '
-        'TB_NewAdresseClient
-        '
-        Me.TB_NewAdresseClient.Location = New System.Drawing.Point(519, 102)
-        Me.TB_NewAdresseClient.Name = "TB_NewAdresseClient"
-        Me.TB_NewAdresseClient.Size = New System.Drawing.Size(232, 20)
-        Me.TB_NewAdresseClient.TabIndex = 35
-        '
-        'BT_NewClient
-        '
-        Me.BT_NewClient.Location = New System.Drawing.Point(1106, 100)
-        Me.BT_NewClient.Name = "BT_NewClient"
-        Me.BT_NewClient.Size = New System.Drawing.Size(148, 23)
-        Me.BT_NewClient.TabIndex = 36
-        Me.BT_NewClient.Text = "Ajouter Nouveau Client"
-        Me.BT_NewClient.UseVisualStyleBackColor = True
-        '
-        'LB_NewClientMail
-        '
-        Me.LB_NewClientMail.AutoSize = True
-        Me.LB_NewClientMail.Location = New System.Drawing.Point(757, 106)
-        Me.LB_NewClientMail.Name = "LB_NewClientMail"
-        Me.LB_NewClientMail.Size = New System.Drawing.Size(32, 13)
-        Me.LB_NewClientMail.TabIndex = 38
-        Me.LB_NewClientMail.Text = "Mail :"
-        '
-        'TB_NewClientMail
-        '
-        Me.TB_NewClientMail.Location = New System.Drawing.Point(795, 102)
-        Me.TB_NewClientMail.Name = "TB_NewClientMail"
-        Me.TB_NewClientMail.Size = New System.Drawing.Size(156, 20)
-        Me.TB_NewClientMail.TabIndex = 39
-        '
-        'LB_NewClientPhone
-        '
-        Me.LB_NewClientPhone.AutoSize = True
-        Me.LB_NewClientPhone.Location = New System.Drawing.Point(957, 105)
-        Me.LB_NewClientPhone.Name = "LB_NewClientPhone"
-        Me.LB_NewClientPhone.Size = New System.Drawing.Size(28, 13)
-        Me.LB_NewClientPhone.TabIndex = 40
-        Me.LB_NewClientPhone.Text = "Tel :"
-        '
-        'TB_NewClientPhone
-        '
-        Me.TB_NewClientPhone.Location = New System.Drawing.Point(991, 103)
-        Me.TB_NewClientPhone.Name = "TB_NewClientPhone"
-        Me.TB_NewClientPhone.Size = New System.Drawing.Size(100, 20)
-        Me.TB_NewClientPhone.TabIndex = 41
-        '
-        'CB_NewProductDeliveryClient
-        '
-        Me.CB_NewProductDeliveryClient.FormattingEnabled = True
-        Me.CB_NewProductDeliveryClient.Location = New System.Drawing.Point(11, 273)
-        Me.CB_NewProductDeliveryClient.Name = "CB_NewProductDeliveryClient"
-        Me.CB_NewProductDeliveryClient.Size = New System.Drawing.Size(99, 21)
-        Me.CB_NewProductDeliveryClient.TabIndex = 42
-        '
-        'CB_NewProductDeliveryProvider
-        '
-        Me.CB_NewProductDeliveryProvider.FormattingEnabled = True
-        Me.CB_NewProductDeliveryProvider.Location = New System.Drawing.Point(8, 255)
-        Me.CB_NewProductDeliveryProvider.Name = "CB_NewProductDeliveryProvider"
-        Me.CB_NewProductDeliveryProvider.Size = New System.Drawing.Size(93, 21)
-        Me.CB_NewProductDeliveryProvider.TabIndex = 30
-        '
-        'CB_NewNewClient
-        '
-        Me.CB_NewNewClient.FormattingEnabled = True
-        Me.CB_NewNewClient.Location = New System.Drawing.Point(323, 209)
-        Me.CB_NewNewClient.Name = "CB_NewNewClient"
-        Me.CB_NewNewClient.Size = New System.Drawing.Size(121, 21)
-        Me.CB_NewNewClient.TabIndex = 43
-        '
-        'LB_NewProductName
-        '
-        Me.LB_NewProductName.AutoSize = True
-        Me.LB_NewProductName.Location = New System.Drawing.Point(10, 100)
-        Me.LB_NewProductName.Name = "LB_NewProductName"
-        Me.LB_NewProductName.Size = New System.Drawing.Size(124, 13)
-        Me.LB_NewProductName.TabIndex = 31
-        Me.LB_NewProductName.Text = "Nouveau Produit : Nom :"
-        '
-        'TB_NewProductName
-        '
-        Me.TB_NewProductName.Location = New System.Drawing.Point(140, 97)
-        Me.TB_NewProductName.Name = "TB_NewProductName"
-        Me.TB_NewProductName.Size = New System.Drawing.Size(120, 20)
-        Me.TB_NewProductName.TabIndex = 32
-        '
-        'LB_NewProductReference
-        '
-        Me.LB_NewProductReference.AutoSize = True
-        Me.LB_NewProductReference.Location = New System.Drawing.Point(266, 100)
-        Me.LB_NewProductReference.Name = "LB_NewProductReference"
-        Me.LB_NewProductReference.Size = New System.Drawing.Size(102, 13)
-        Me.LB_NewProductReference.TabIndex = 33
-        Me.LB_NewProductReference.Text = "Référence Produit : "
-        '
-        'TB_NewProductReference
-        '
-        Me.TB_NewProductReference.Location = New System.Drawing.Point(371, 97)
-        Me.TB_NewProductReference.Name = "TB_NewProductReference"
-        Me.TB_NewProductReference.Size = New System.Drawing.Size(100, 20)
-        Me.TB_NewProductReference.TabIndex = 34
-        '
-        'LB_NewProductProvider
-        '
-        Me.LB_NewProductProvider.AutoSize = True
-        Me.LB_NewProductProvider.Location = New System.Drawing.Point(477, 100)
-        Me.LB_NewProductProvider.Name = "LB_NewProductProvider"
-        Me.LB_NewProductProvider.Size = New System.Drawing.Size(67, 13)
-        Me.LB_NewProductProvider.TabIndex = 35
-        Me.LB_NewProductProvider.Text = "Fournisseur :"
-        '
-        'CB_NewProductProvider
-        '
-        Me.CB_NewProductProvider.FormattingEnabled = True
-        Me.CB_NewProductProvider.Location = New System.Drawing.Point(550, 96)
-        Me.CB_NewProductProvider.Name = "CB_NewProductProvider"
-        Me.CB_NewProductProvider.Size = New System.Drawing.Size(121, 21)
-        Me.CB_NewProductProvider.TabIndex = 36
-        '
-        'BT_NewProductConfirm
-        '
-        Me.BT_NewProductConfirm.Location = New System.Drawing.Point(677, 95)
-        Me.BT_NewProductConfirm.Name = "BT_NewProductConfirm"
-        Me.BT_NewProductConfirm.Size = New System.Drawing.Size(159, 23)
-        Me.BT_NewProductConfirm.TabIndex = 37
-        Me.BT_NewProductConfirm.Text = "Confirmer le nouveau produit"
-        Me.BT_NewProductConfirm.UseVisualStyleBackColor = True
         '
         'Form_Stocks
         '

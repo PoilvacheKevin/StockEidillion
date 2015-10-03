@@ -1,0 +1,12 @@
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\bin\Release\GestionStockEidillion.exe.config
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\bin\Release\GestionStockEidillion.exe
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\bin\Release\GestionStockEidillion.pdb
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\bin\Release\GestionStockEidillion.xml
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\bin\Release\MySql.Data.Entity.EF5.dll
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.Form_Acceuil.resources
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.Resources.resources
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.Form_Stocks.resources
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.vbproj.GenerateResource.Cache
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.exe
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.xml
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.pdb

@@ -55,7 +55,6 @@ Partial Class Form_Stocks
         Me.LB_NewPriceDeliveryProvider = New System.Windows.Forms.Label()
         Me.LB_NewQuantityDeliveryProvider = New System.Windows.Forms.Label()
         Me.LB_NewProductDeliveryProvider = New System.Windows.Forms.Label()
-        Me.TB_NewNewProvider = New System.Windows.Forms.TextBox()
         Me.TB_NewDateProvider = New System.Windows.Forms.TextBox()
         Me.TB_NewRefProvider = New System.Windows.Forms.TextBox()
         Me.LB_NewProviderDeliveryProvider = New System.Windows.Forms.Label()
@@ -115,6 +114,7 @@ Partial Class Form_Stocks
         Me.TB_LastDeliveryClient = New System.Windows.Forms.TextBox()
         Me.LB_LastDeliveryClient = New System.Windows.Forms.Label()
         Me.TP_Estimation = New System.Windows.Forms.TabPage()
+        Me.CB_NewNewProvider = New System.Windows.Forms.ComboBox()
         Me.TabC_Stock.SuspendLayout()
         Me.TP_StockShow.SuspendLayout()
         Me.TP_Provider.SuspendLayout()
@@ -254,6 +254,7 @@ Partial Class Form_Stocks
         '
         'TP_Provider
         '
+        Me.TP_Provider.Controls.Add(Me.CB_NewNewProvider)
         Me.TP_Provider.Controls.Add(Me.BT_NewProductConfirm)
         Me.TP_Provider.Controls.Add(Me.CB_NewProductProvider)
         Me.TP_Provider.Controls.Add(Me.LB_NewProductProvider)
@@ -273,7 +274,6 @@ Partial Class Form_Stocks
         Me.TP_Provider.Controls.Add(Me.LB_NewPriceDeliveryProvider)
         Me.TP_Provider.Controls.Add(Me.LB_NewQuantityDeliveryProvider)
         Me.TP_Provider.Controls.Add(Me.LB_NewProductDeliveryProvider)
-        Me.TP_Provider.Controls.Add(Me.TB_NewNewProvider)
         Me.TP_Provider.Controls.Add(Me.TB_NewDateProvider)
         Me.TP_Provider.Controls.Add(Me.TB_NewRefProvider)
         Me.TP_Provider.Controls.Add(Me.LB_NewProviderDeliveryProvider)
@@ -359,7 +359,6 @@ Partial Class Form_Stocks
         '
         'CB_NewProductDeliveryProvider
         '
-        Me.CB_NewProductDeliveryProvider.Enabled = False
         Me.CB_NewProductDeliveryProvider.FormattingEnabled = True
         Me.CB_NewProductDeliveryProvider.Location = New System.Drawing.Point(8, 255)
         Me.CB_NewProductDeliveryProvider.Name = "CB_NewProductDeliveryProvider"
@@ -459,13 +458,6 @@ Partial Class Form_Stocks
         Me.LB_NewProductDeliveryProvider.TabIndex = 18
         Me.LB_NewProductDeliveryProvider.Text = "Produit :"
         '
-        'TB_NewNewProvider
-        '
-        Me.TB_NewNewProvider.Location = New System.Drawing.Point(345, 183)
-        Me.TB_NewNewProvider.Name = "TB_NewNewProvider"
-        Me.TB_NewNewProvider.Size = New System.Drawing.Size(126, 20)
-        Me.TB_NewNewProvider.TabIndex = 13
-        '
         'TB_NewDateProvider
         '
         Me.TB_NewDateProvider.Location = New System.Drawing.Point(188, 183)
@@ -509,9 +501,9 @@ Partial Class Form_Stocks
         '
         'BT_ConfirmFinishDelivery
         '
-        Me.BT_ConfirmFinishDelivery.Location = New System.Drawing.Point(792, 68)
+        Me.BT_ConfirmFinishDelivery.Location = New System.Drawing.Point(790, 66)
         Me.BT_ConfirmFinishDelivery.Name = "BT_ConfirmFinishDelivery"
-        Me.BT_ConfirmFinishDelivery.Size = New System.Drawing.Size(151, 20)
+        Me.BT_ConfirmFinishDelivery.Size = New System.Drawing.Size(151, 23)
         Me.BT_ConfirmFinishDelivery.TabIndex = 6
         Me.BT_ConfirmFinishDelivery.Text = "Confirmer Arrivée"
         Me.BT_ConfirmFinishDelivery.UseVisualStyleBackColor = True
@@ -899,7 +891,7 @@ Partial Class Form_Stocks
         '
         Me.BT_ConfirmDeliveryClient.Location = New System.Drawing.Point(714, 71)
         Me.BT_ConfirmDeliveryClient.Name = "BT_ConfirmDeliveryClient"
-        Me.BT_ConfirmDeliveryClient.Size = New System.Drawing.Size(180, 22)
+        Me.BT_ConfirmDeliveryClient.Size = New System.Drawing.Size(159, 22)
         Me.BT_ConfirmDeliveryClient.TabIndex = 11
         Me.BT_ConfirmDeliveryClient.Text = "Confirmer Livraison"
         Me.BT_ConfirmDeliveryClient.UseVisualStyleBackColor = True
@@ -995,6 +987,14 @@ Partial Class Form_Stocks
         Me.TP_Estimation.Text = "Stock Estimation"
         Me.TP_Estimation.UseVisualStyleBackColor = True
         '
+        'CB_NewNewProvider
+        '
+        Me.CB_NewNewProvider.FormattingEnabled = True
+        Me.CB_NewNewProvider.Location = New System.Drawing.Point(350, 182)
+        Me.CB_NewNewProvider.Name = "CB_NewNewProvider"
+        Me.CB_NewNewProvider.Size = New System.Drawing.Size(121, 21)
+        Me.CB_NewNewProvider.TabIndex = 36
+        '
         'Form_Stocks
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1042,7 +1042,6 @@ Partial Class Form_Stocks
     Friend WithEvents LB_NewPriceDeliveryProvider As System.Windows.Forms.Label
     Friend WithEvents LB_NewQuantityDeliveryProvider As System.Windows.Forms.Label
     Friend WithEvents LB_NewProductDeliveryProvider As System.Windows.Forms.Label
-    Friend WithEvents TB_NewNewProvider As System.Windows.Forms.TextBox
     Friend WithEvents TB_NewDateProvider As System.Windows.Forms.TextBox
     Friend WithEvents TB_NewRefProvider As System.Windows.Forms.TextBox
     Friend WithEvents LB_NewProviderDeliveryProvider As System.Windows.Forms.Label
@@ -1109,4 +1108,5 @@ Partial Class Form_Stocks
     Friend WithEvents TB_NewProductName As System.Windows.Forms.TextBox
     Friend WithEvents LB_NewProductName As System.Windows.Forms.Label
     Friend WithEvents BT_NewProductConfirm As System.Windows.Forms.Button
+    Friend WithEvents CB_NewNewProvider As System.Windows.Forms.ComboBox
 End Class

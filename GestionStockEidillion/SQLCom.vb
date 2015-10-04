@@ -86,4 +86,59 @@ Public Class SQLCom
         End Try
         Connexion.Close()
     End Function
+
+    Public Function GiveNamesOfProducts() As String()
+        Dim Request As String
+        Dim Capture() As String
+        Dim i As Integer
+        Try
+            Connexion.Open()
+            Request = "SELECT * FROM `t_produits`"
+            Dim Command As New MySqlCommand(Request, Connexion)
+            Command.ExecuteNonQuery()
+            Dim Reader As MySqlDataReader
+            Reader = Command.ExecuteReader
+
+            While Reader.Read
+                ReDim Preserve Capture(i)
+                Capture(i) = Reader.GetString(1)
+                i += 1
+            End While
+
+            Connexion.Close()
+
+            Return Capture
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return Capture
+        End Try
+    End Function
+
+    Public Function GiveNamesOfClients() As String()
+        Dim Request As String
+        Dim Capture() As String
+        Dim i As Integer
+        Try
+            Connexion.Open()
+            Request = "SELECT * FROM `t_clients`"
+            Dim Command As New MySqlCommand(Request, Connexion)
+            Command.ExecuteNonQuery()
+            Dim Reader As MySqlDataReader
+            Reader = Command.ExecuteReader
+
+            While Reader.Read
+                ReDim Preserve Capture(i)
+                Capture(i) = Reader.GetString(1)
+                i += 1
+            End While
+
+            Connexion.Close()
+
+            Return Capture
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return Capture
+        End Try
+    End Function
+
 End Class

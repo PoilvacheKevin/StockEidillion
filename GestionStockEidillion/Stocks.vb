@@ -12,6 +12,18 @@
         'Chargement de la CB_NewProductProvider
         AddItemsCB_NewProductProvider()
 
+        'Chargement de la CB_NewProductDeliveryProvider
+        AddItemsCB_NewProductDeliveryProvider()
+
+        'Chargement de la CB_NewProductDeliveryClient
+        AddItemsCB_NewProductDeliveryClient()
+
+        'Chargement de la CB_NewNewClient
+        AddItemsCB_NewNewClient()
+
+        'Chargement de la CB_NewNewProvider
+        AddItemsCB_NewNewProvider()
+
         'Création de la ListView Stock
         LV_StockLive.FullRowSelect = True
         LV_StockLive.View = View.Details
@@ -118,6 +130,42 @@
 
         For Each Value In Providers
             CB_NewProductProvider.Items.Add(Value)
+        Next
+    End Sub
+
+    Private Sub AddItemsCB_NewNewProvider()
+        Dim Providers() As String
+        Providers = MySQLCom.GiveNamesOfProviders()
+
+        For Each Value In Providers
+            CB_NewNewProvider.Items.Add(Value)
+        Next
+    End Sub
+
+    Private Sub AddItemsCB_NewProductDeliveryProvider()
+        Dim Products() As String
+        Products = MySQLCom.GiveNamesOfProducts()
+
+        For Each Value In Products
+            CB_NewProductDeliveryProvider.Items.Add(Value)
+        Next
+    End Sub
+
+    Private Sub AddItemsCB_NewProductDeliveryClient()
+        Dim Products() As String
+        Products = MySQLCom.GiveNamesOfProducts()
+
+        For Each Value In Products
+            CB_NewProductDeliveryClient.Items.Add(Value)
+        Next
+    End Sub
+
+    Private Sub AddItemsCB_NewNewClient()
+        Dim Clients() As String
+        Clients = MySQLCom.GiveNamesOfClients()
+
+        For Each Value In Clients
+            CB_NewNewClient.Items.Add(Value)
         Next
     End Sub
 End Class

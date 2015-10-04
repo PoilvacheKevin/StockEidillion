@@ -36,26 +36,54 @@ Public Class SQLCom
         Connexion.Close()
     End Function
 
-    Public Function GiveNumberOfProviders() As Integer
+    Public Function GiveNamesOfProviders() As String()
         Dim Number As Integer
         Dim Request As String
+        Dim Value() As String
         Try
             Connexion.Open()
-            Request = "SELECT COUNT(`ID_Fournisseur`) FROM `t_fournisseurs`"
+            Request = "SELECT * FROM `t_fournisseurs`"
             Dim Command As New MySqlCommand(Request, Connexion)
             Command.ExecuteNonQuery()
             Dim Reader As MySqlDataReader
-            Dim Value As String
             Reader = Command.ExecuteReader()
-            Value = Reader.GetString(1)
-            Number = CType(Value, Integer)
+            While Reader.Read()
+                ReDim Preserve Value(Number)
+                Value(Number) = Reader.GetString(1)
+                Number += 1
+            End While
+            Connexion.Close()
+            Return Value
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return Value
+        End Try
+        Connexion.Close()
+    End Function
 
-            Return Number
+    Public Function GiveIDProviders(ByVal ProviderName As String) As Integer
+        Dim Request As String
+        Dim Capture As String
+        Dim Value As Integer
+        Try
+            Connexion.Open()
+            Request = "SELECT * FROM `t_fournisseurs` WHERE `Nom`=""" & ProviderName & """"
+            Dim Command As New MySqlCommand(Request, Connexion)
+            Command.ExecuteNonQuery()
+            Dim Reader As MySqlDataReader
+            Reader = Command.ExecuteReader
+
+            While Reader.Read
+                Capture = Reader.GetString(0)
+            End While
+            Value = CType(Capture, Integer)
+            Connexion.Close()
+
+            Return Value
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             Return -1
         End Try
         Connexion.Close()
     End Function
-
 End Class

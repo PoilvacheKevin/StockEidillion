@@ -10,3 +10,4 @@ C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStock
 C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.exe
 C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.xml
 C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.pdb
+C:\Users\Smoa\Documents\GitHub\GestionStockEidillion\StockEidillion\GestionStockEidillion\obj\Release\GestionStockEidillion.vbprojResolveAssemblyReference.cache

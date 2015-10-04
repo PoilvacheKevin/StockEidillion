@@ -1,11 +1,16 @@
 ﻿Public Class Form_Stocks
 
     Dim MySQLCom As New SQLCom()
-    Private Sub LV_StockLive_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LV_StockLive.SelectedIndexChanged
 
+    Private Sub Form_Stocks_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        'Fermeture d'Accueil
+        Form_Acceuil.Dispose()
     End Sub
 
     Private Sub Form_Stocks_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Chargement de la CB_NewProductProvider
+        AddItemsCB_NewProductProvider()
 
         'Création de la ListView Stock
         LV_StockLive.FullRowSelect = True
@@ -70,6 +75,7 @@
         LV_CurrentDeliversiesClients.LabelEdit = False
     End Sub
 
+    'Procédure pour ajouter un client à la base de donnée
     Private Sub BT_NewClient_Click(sender As Object, e As EventArgs) Handles BT_NewClient.Click
         If TB_NewAdresseClient.Text <> "" And TB_NewClient.Text <> "" And TB_NewClientTVA.Text <> "" Then
             Dim Verification As Boolean
@@ -87,20 +93,31 @@
         End If
     End Sub
 
-
+    'Procédure pour ajouter un nouveau produit
     Private Sub BT_NewProductConfirm_Click(sender As Object, e As EventArgs) Handles BT_NewProductConfirm.Click
-        If TB_NewProductName.Text <> "" And TB_NewProductReference.Text <> "" And CB_NewProductProvider.Text = "" Then
+        If TB_NewProductName.Text <> "" And TB_NewProductReference.Text <> "" Then
             Dim Verification As Boolean
-            MySQLCom.GiveNumberOfProviders()
+            Dim IDProvider As Integer
             Dim Reference As Integer = CType(TB_NewProductReference.Text, Integer)
-            Verification = MySQLCom.AddProduct(TB_NewProductName.Text, Reference, 1)
+            IDProvider = MySQLCom.GiveIDProviders(CB_NewProductProvider.SelectedItem)
+            Verification = MySQLCom.AddProduct(TB_NewProductName.Text, Reference, IDProvider)
             If Verification = True Then
                 MessageBox.Show("Elément Enregistré")
                 TB_NewProductReference.Text = ""
                 TB_NewProductName.Text = ""
             End If
         Else
-            MessageBox.Show("Donnée(s) Manquante(s) Pour Ajouter Client à la DataBase !")
+            MessageBox.Show("Donnée(s) Manquante(s) Pour Ajouter Produit à la DataBase !")
         End If
+    End Sub
+
+    'Procédure pour ajouter les fournisseurs à la CB_NewProductProviders
+    Private Sub AddItemsCB_NewProductProvider()
+        Dim Providers() As String
+        Providers = MySQLCom.GiveNamesOfProviders()
+
+        For Each Value In Providers
+            CB_NewProductProvider.Items.Add(Value)
+        Next
     End Sub
 End Class

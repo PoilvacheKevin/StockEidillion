@@ -8,6 +8,7 @@ Public Class Form_Acceuil
         If Test = True Then
             Test = ID_Confirm()
             If Test = True Then
+                Me.Visible = False
                 Form_Stocks.Show()
             End If
         Else

@@ -310,7 +310,6 @@ Partial Class Form_Stocks
         '
         'CB_NewProductProvider
         '
-        Me.CB_NewProductProvider.Enabled = False
         Me.CB_NewProductProvider.FormattingEnabled = True
         Me.CB_NewProductProvider.Location = New System.Drawing.Point(550, 96)
         Me.CB_NewProductProvider.Name = "CB_NewProductProvider"

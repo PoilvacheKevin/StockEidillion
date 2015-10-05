@@ -36,6 +36,7 @@ Partial Class Form_Stocks
         Me.LB_StockLive = New System.Windows.Forms.Label()
         Me.LV_StockLive = New System.Windows.Forms.ListView()
         Me.TP_Provider = New System.Windows.Forms.TabPage()
+        Me.CB_NewNewProvider = New System.Windows.Forms.ComboBox()
         Me.BT_NewProductConfirm = New System.Windows.Forms.Button()
         Me.CB_NewProductProvider = New System.Windows.Forms.ComboBox()
         Me.LB_NewProductProvider = New System.Windows.Forms.Label()
@@ -92,7 +93,7 @@ Partial Class Form_Stocks
         Me.LV_CurrentDeliveriesClient = New System.Windows.Forms.ListView()
         Me.BT_DeleteDeliveryClient = New System.Windows.Forms.Button()
         Me.BT_AcceptDeliveryClient = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TB_NewPriceDeliveryClient = New System.Windows.Forms.TextBox()
         Me.LB_NewPriceDeliveryClient = New System.Windows.Forms.Label()
         Me.TB_NewQuantityDeliveryClient = New System.Windows.Forms.TextBox()
         Me.LB_NewQuantityDeliveryClient = New System.Windows.Forms.Label()
@@ -100,8 +101,6 @@ Partial Class Form_Stocks
         Me.LB_NewClientDeliveryClient = New System.Windows.Forms.Label()
         Me.TB_NewDateClient = New System.Windows.Forms.TextBox()
         Me.LB_NewDateClient = New System.Windows.Forms.Label()
-        Me.TB_NewRefDeliveryClient = New System.Windows.Forms.TextBox()
-        Me.LB_NewRefDeliveryClient = New System.Windows.Forms.Label()
         Me.BT_ConfirmDeliveryClient = New System.Windows.Forms.Button()
         Me.TB_DeliveryNameClient = New System.Windows.Forms.TextBox()
         Me.LB_DeliveryNameClient = New System.Windows.Forms.Label()
@@ -114,7 +113,8 @@ Partial Class Form_Stocks
         Me.TB_LastDeliveryClient = New System.Windows.Forms.TextBox()
         Me.LB_LastDeliveryClient = New System.Windows.Forms.Label()
         Me.TP_Estimation = New System.Windows.Forms.TabPage()
-        Me.CB_NewNewProvider = New System.Windows.Forms.ComboBox()
+        Me.LB_NewRefDeliveryClient = New System.Windows.Forms.Label()
+        Me.TB_NewRefDeliveryClient = New System.Windows.Forms.TextBox()
         Me.TabC_Stock.SuspendLayout()
         Me.TP_StockShow.SuspendLayout()
         Me.TP_Provider.SuspendLayout()
@@ -298,6 +298,14 @@ Partial Class Form_Stocks
         Me.TP_Provider.TabIndex = 2
         Me.TP_Provider.Text = "Commandes Fournisseurs"
         Me.TP_Provider.UseVisualStyleBackColor = True
+        '
+        'CB_NewNewProvider
+        '
+        Me.CB_NewNewProvider.FormattingEnabled = True
+        Me.CB_NewNewProvider.Location = New System.Drawing.Point(350, 182)
+        Me.CB_NewNewProvider.Name = "CB_NewNewProvider"
+        Me.CB_NewNewProvider.Size = New System.Drawing.Size(121, 21)
+        Me.CB_NewNewProvider.TabIndex = 36
         '
         'BT_NewProductConfirm
         '
@@ -619,7 +627,7 @@ Partial Class Form_Stocks
         Me.TP_Client.Controls.Add(Me.LV_CurrentDeliveriesClient)
         Me.TP_Client.Controls.Add(Me.BT_DeleteDeliveryClient)
         Me.TP_Client.Controls.Add(Me.BT_AcceptDeliveryClient)
-        Me.TP_Client.Controls.Add(Me.TextBox2)
+        Me.TP_Client.Controls.Add(Me.TB_NewPriceDeliveryClient)
         Me.TP_Client.Controls.Add(Me.LB_NewPriceDeliveryClient)
         Me.TP_Client.Controls.Add(Me.TB_NewQuantityDeliveryClient)
         Me.TP_Client.Controls.Add(Me.LB_NewQuantityDeliveryClient)
@@ -805,12 +813,12 @@ Partial Class Form_Stocks
         Me.BT_AcceptDeliveryClient.Text = "Ajouter"
         Me.BT_AcceptDeliveryClient.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'TB_NewPriceDeliveryClient
         '
-        Me.TextBox2.Location = New System.Drawing.Point(252, 273)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(106, 20)
-        Me.TextBox2.TabIndex = 23
+        Me.TB_NewPriceDeliveryClient.Location = New System.Drawing.Point(252, 273)
+        Me.TB_NewPriceDeliveryClient.Name = "TB_NewPriceDeliveryClient"
+        Me.TB_NewPriceDeliveryClient.Size = New System.Drawing.Size(106, 20)
+        Me.TB_NewPriceDeliveryClient.TabIndex = 23
         '
         'LB_NewPriceDeliveryClient
         '
@@ -870,22 +878,6 @@ Partial Class Form_Stocks
         Me.LB_NewDateClient.Size = New System.Drawing.Size(136, 13)
         Me.LB_NewDateClient.TabIndex = 14
         Me.LB_NewDateClient.Text = "Date de Livraison Estimée :"
-        '
-        'TB_NewRefDeliveryClient
-        '
-        Me.TB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 209)
-        Me.TB_NewRefDeliveryClient.Name = "TB_NewRefDeliveryClient"
-        Me.TB_NewRefDeliveryClient.Size = New System.Drawing.Size(131, 20)
-        Me.TB_NewRefDeliveryClient.TabIndex = 13
-        '
-        'LB_NewRefDeliveryClient
-        '
-        Me.LB_NewRefDeliveryClient.AutoSize = True
-        Me.LB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 184)
-        Me.LB_NewRefDeliveryClient.Name = "LB_NewRefDeliveryClient"
-        Me.LB_NewRefDeliveryClient.Size = New System.Drawing.Size(134, 13)
-        Me.LB_NewRefDeliveryClient.TabIndex = 12
-        Me.LB_NewRefDeliveryClient.Text = "Réf. Nouvelle Commande :"
         '
         'BT_ConfirmDeliveryClient
         '
@@ -987,13 +979,21 @@ Partial Class Form_Stocks
         Me.TP_Estimation.Text = "Stock Estimation"
         Me.TP_Estimation.UseVisualStyleBackColor = True
         '
-        'CB_NewNewProvider
+        'LB_NewRefDeliveryClient
         '
-        Me.CB_NewNewProvider.FormattingEnabled = True
-        Me.CB_NewNewProvider.Location = New System.Drawing.Point(350, 182)
-        Me.CB_NewNewProvider.Name = "CB_NewNewProvider"
-        Me.CB_NewNewProvider.Size = New System.Drawing.Size(121, 21)
-        Me.CB_NewNewProvider.TabIndex = 36
+        Me.LB_NewRefDeliveryClient.AutoSize = True
+        Me.LB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 184)
+        Me.LB_NewRefDeliveryClient.Name = "LB_NewRefDeliveryClient"
+        Me.LB_NewRefDeliveryClient.Size = New System.Drawing.Size(134, 13)
+        Me.LB_NewRefDeliveryClient.TabIndex = 12
+        Me.LB_NewRefDeliveryClient.Text = "Réf. Nouvelle Commande :"
+        '
+        'TB_NewRefDeliveryClient
+        '
+        Me.TB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 209)
+        Me.TB_NewRefDeliveryClient.Name = "TB_NewRefDeliveryClient"
+        Me.TB_NewRefDeliveryClient.Size = New System.Drawing.Size(131, 20)
+        Me.TB_NewRefDeliveryClient.TabIndex = 13
         '
         'Form_Stocks
         '
@@ -1071,14 +1071,12 @@ Partial Class Form_Stocks
     Friend WithEvents LB_DeliveryReferenceClient As System.Windows.Forms.Label
     Friend WithEvents TB_LastDateClient As System.Windows.Forms.TextBox
     Friend WithEvents LB_LastDateClient As System.Windows.Forms.Label
-    Friend WithEvents LB_NewRefDeliveryClient As System.Windows.Forms.Label
-    Friend WithEvents TB_NewRefDeliveryClient As System.Windows.Forms.TextBox
     Friend WithEvents LB_NewDateClient As System.Windows.Forms.Label
     Friend WithEvents TB_NewDateClient As System.Windows.Forms.TextBox
     Friend WithEvents LB_NewClientDeliveryClient As System.Windows.Forms.Label
     Friend WithEvents LB_NewProductDeliveryClient As System.Windows.Forms.Label
     Friend WithEvents LB_NewQuantityDeliveryClient As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TB_NewPriceDeliveryClient As System.Windows.Forms.TextBox
     Friend WithEvents LB_NewPriceDeliveryClient As System.Windows.Forms.Label
     Friend WithEvents TB_NewQuantityDeliveryClient As System.Windows.Forms.TextBox
     Friend WithEvents BT_DeleteDeliveryClient As System.Windows.Forms.Button
@@ -1109,4 +1107,6 @@ Partial Class Form_Stocks
     Friend WithEvents LB_NewProductName As System.Windows.Forms.Label
     Friend WithEvents BT_NewProductConfirm As System.Windows.Forms.Button
     Friend WithEvents CB_NewNewProvider As System.Windows.Forms.ComboBox
+    Friend WithEvents TB_NewRefDeliveryClient As System.Windows.Forms.TextBox
+    Friend WithEvents LB_NewRefDeliveryClient As System.Windows.Forms.Label
 End Class

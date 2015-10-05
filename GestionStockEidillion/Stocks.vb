@@ -133,6 +133,7 @@
         Next
     End Sub
 
+    'Procédure pour afficher les différents fournisseurs 
     Private Sub AddItemsCB_NewNewProvider()
         Dim Providers() As String
         Providers = MySQLCom.GiveNamesOfProviders()
@@ -141,6 +142,7 @@
             CB_NewNewProvider.Items.Add(Value)
         Next
     End Sub
+
 
     Private Sub AddItemsCB_NewProductDeliveryProvider()
         Dim Products() As String
@@ -167,5 +169,84 @@
         For Each Value In Clients
             CB_NewNewClient.Items.Add(Value)
         Next
+    End Sub
+
+    'Ajoute un produit/quantité/prix à LV correspondante
+    Private Sub BT_AcceptDeliveryClient_Click(sender As Object, e As EventArgs) Handles BT_AcceptDeliveryClient.Click
+        Try
+            Dim Temp As String = CB_NewProductDeliveryClient.SelectedItem
+            If CB_NewProductDeliveryClient.SelectedItem = String.Empty Then
+                MessageBox.Show("Aucun produit pointé")
+            End If
+
+            For Each Value In LV_CurrentDeliveriesClient.Items
+                If Temp = Value.text Then
+                    Value.subitems(1).text = TB_NewQuantityDeliveryClient.Text
+                    Value.subitems(2).text = TB_NewPriceDeliveryClient.Text
+                    TB_NewQuantityDeliveryClient.Text = ""
+                    TB_NewPriceDeliveryClient.Text = ""
+
+                    Exit Sub
+                End If
+            Next
+
+            Dim MyLine As ListViewItem
+            MyLine = LV_CurrentDeliveriesClient.Items.Add(CB_NewProductDeliveryClient.SelectedItem)
+            MyLine.SubItems.Add(TB_NewQuantityDeliveryClient.Text)
+            MyLine.SubItems.Add(TB_NewPriceDeliveryClient.Text)
+
+            TB_NewQuantityDeliveryClient.Text = ""
+            TB_NewPriceDeliveryClient.Text = ""
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    'Ajoute un produit/quantité/prix à LV correspondante
+    Private Sub BT_AcceptDeliveryProvider_Click(sender As Object, e As EventArgs) Handles BT_AcceptDeliveryProvider.Click
+        Try
+            Dim MyLine As ListViewItem
+            Dim Temp As String = CB_NewProductDeliveryProvider.SelectedItem
+
+            If CB_NewProductDeliveryProvider.SelectedItem = String.Empty Then
+                MessageBox.Show("Aucun produit pointé")
+            End If
+
+            For Each Value In LV_CurrentDeliveriesProvider.Items
+                If Temp = Value.text Then
+                    Value.subitems(1).text = TB_NewQuantityDeliveryProvider.Text
+                    Value.subitems(2).text = TB_NewPriceDeliveryProvider.Text
+                    TB_NewQuantityDeliveryProvider.Text = ""
+                    TB_NewPriceDeliveryProvider.Text = ""
+
+                    Exit Sub
+                End If
+            Next
+
+            MyLine = LV_CurrentDeliveriesProvider.Items.Add(CB_NewProductDeliveryProvider.SelectedItem)
+            MyLine.SubItems.Add(TB_NewQuantityDeliveryProvider.Text)
+            MyLine.SubItems.Add(TB_NewPriceDeliveryProvider.Text)
+            TB_NewQuantityDeliveryProvider.Text = ""
+            TB_NewPriceDeliveryProvider.Text = ""
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    'Affiche la sélection de la ligne dans la listview des produits au niveau des TB correspondantes 
+    Private Sub LV_CurrentDeliveriesClient_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LV_CurrentDeliveriesClient.Click
+        Dim MonItem As ListViewItem = LV_CurrentDeliveriesClient.SelectedItems(0)
+        CB_NewProductDeliveryClient.SelectedItem = MonItem.SubItems(0).Text
+        TB_NewQuantityDeliveryClient.Text = MonItem.SubItems(1).Text
+        TB_NewPriceDeliveryClient.Text = MonItem.SubItems(2).Text
+    End Sub
+
+    'Affiche la sélection de la ligne dans la listview des produits au niveau des TB correspondantes 
+    Private Sub LV_CurrentDeliveriesProvider_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LV_CurrentDeliveriesProvider.Click
+        Dim MonItem As ListViewItem = LV_CurrentDeliveriesProvider.SelectedItems(0)
+        CB_NewProductDeliveryProvider.SelectedItem = MonItem.SubItems(0).Text
+        TB_NewQuantityDeliveryProvider.Text = MonItem.SubItems(1).Text
+        TB_NewPriceDeliveryProvider.Text = MonItem.SubItems(2).Text
     End Sub
 End Class

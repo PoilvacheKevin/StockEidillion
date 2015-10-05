@@ -36,6 +36,7 @@ Public Class SQLCom
         Connexion.Close()
     End Function
 
+    'Donne l'ensemble des noms des producteurs
     Public Function GiveNamesOfProviders() As String()
         Dim Number As Integer
         Dim Request As String
@@ -61,6 +62,8 @@ Public Class SQLCom
         Connexion.Close()
     End Function
 
+
+    'Donne l'ID du producteur susnommé
     Public Function GiveIDProviders(ByVal ProviderName As String) As Integer
         Dim Request As String
         Dim Capture As String
@@ -87,6 +90,7 @@ Public Class SQLCom
         Connexion.Close()
     End Function
 
+    'Donne l'ensemble des noms des produits
     Public Function GiveNamesOfProducts() As String()
         Dim Request As String
         Dim Capture() As String
@@ -114,6 +118,7 @@ Public Class SQLCom
         End Try
     End Function
 
+    'Donne l'ensemble des noms des clients
     Public Function GiveNamesOfClients() As String()
         Dim Request As String
         Dim Capture() As String

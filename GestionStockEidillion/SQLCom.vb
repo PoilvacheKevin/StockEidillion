@@ -204,11 +204,11 @@ Public Class SQLCom
     End Function
 
     'On envoie Le produit et sa commande
-    Public Function CurrentDeliversiesClientsAdd(ByVal IDProduct As Integer, ByVal IDName As Integer, ByVal DeliveryTime As Date, ByVal DeliveryValue As Double, ByVal Reference As Integer, ByVal DeliveryPrice As Double, ByVal DeliveryQuantity As Integer) As Boolean
+    Public Function CurrentDeliversiesClientsAdd(ByVal IDProduct As Integer, ByVal IDNameClient As Integer, ByVal DeliveryTime As String, ByVal Reference As Integer, ByVal DeliveryPrice As Double, ByVal DeliveryQuantity As Integer) As Boolean
         Dim Request As String
         Try
             Connexion.Open()
-            Request = "INSERT INTO `t_comcli`(`Reference`, `Prix`, `Quantite`, `Date_Depart`, `XID_Client`, `XID_Produit`) VALUES(" & Reference & "," & DeliveryPrice & "," & DeliveryQuantity & ",""" & DeliveryTime & """," & IDName & "," & IDProduct & ");"
+            Request = "INSERT INTO `t_comcli`(`Reference`, `Prix`, `Quantite`, `Date_Depart`, `XID_Client`, `XID_Produit`) VALUES(" & Reference & "," & DeliveryPrice & "," & DeliveryQuantity & ",""" & DeliveryTime & """," & IDNameClient & "," & IDProduct & ");"
             Dim Command As New MySqlCommand(Request, Connexion)
             Command.ExecuteNonQuery()
             Connexion.Close()
@@ -221,7 +221,7 @@ Public Class SQLCom
         Connexion.Close()
     End Function
 
-    Public Function CurrentDeliversiesProviderAdd(ByVal IDProduct As Integer, ByVal IDName As Integer, ByVal DeliveryTime As Date, ByVal DeliveryValue As Double, ByVal Reference As Integer, ByVal DeliveryPrice As Double, ByVal DeliveryQuantity As Integer) As Boolean
+    Public Function CurrentDeliversiesProviderAdd(ByVal IDProduct As Integer, ByVal IDNameProvider As Integer, ByVal DeliveryTime As String, ByVal Reference As Integer, ByVal DeliveryPrice As Double, ByVal DeliveryQuantity As Integer) As Boolean
         Dim Request As String
         Try
             Connexion.Open()

@@ -2,6 +2,7 @@
 
     Dim MySQLCom As New SQLCom()
 
+
     Private Sub Form_Stocks_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         'Fermeture d'Accueil
         Form_Acceuil.Dispose()
@@ -277,10 +278,32 @@
     End Sub
 
     Private Sub BT_ConfirmNewDeliveryClient_Click(sender As Object, e As EventArgs) Handles BT_ConfirmNewDeliveryClient.Click
+        Dim IDClient As Integer
+        Dim IDProduct As Integer
+        Dim Reference As Integer
+        Dim Price As Double
+        Dim PriceTransform As String
+        Dim Quantity As Integer
         Try
+            IDClient = MySQLCom.GiveIDofClients(CB_NewNewClient.SelectedItem)
+            Reference = CType(TB_NewRefDeliveryClient.Text, Integer)
 
+            For Each Value In LV_CurrentDeliveriesClient.Items
+                PriceTransform = Replace(Value.subitems(2).text, ".", ",")
+                Price = CType(PriceTransform, Double)
+                Quantity = CType(Value.Subitems(1).text, Integer)
+                IDProduct = MySQLCom.GiveIDofProduct(Value.SubItems(0).Text)
+
+                If MySQLCom.CurrentDeliversiesClientsAdd(IDProduct, IDClient, TB_NewDateClient.Text, Reference, Price, Quantity) Then
+
+                End If
+            Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub BT_ConfirmNewDelivery_Click(sender As Object, e As EventArgs) Handles BT_ConfirmNewDelivery.Click
+
     End Sub
 End Class

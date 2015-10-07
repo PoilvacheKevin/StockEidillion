@@ -146,4 +146,96 @@ Public Class SQLCom
         End Try
     End Function
 
+    'On récupère l'ID du client demandé
+    Public Function GiveIDofClients(ByVal NameClient As String) As Integer
+        Dim IDClient As Integer
+        Dim Request As String
+        Dim Capture As String
+        Try
+            Connexion.Open()
+            Request = "SELECT * FROM t_clients WHERE `Nom` = """ & NameClient & """;"
+
+            Dim Command As New MySqlCommand(Request, Connexion)
+            Command.ExecuteNonQuery()
+
+            Dim Reader As MySqlDataReader
+            Reader = Command.ExecuteReader
+
+            While Reader.Read
+                Capture = Reader.GetString(0)
+            End While
+
+            IDClient = CType(Capture, Integer)
+            Connexion.Close()
+            Return IDClient
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return -1
+        End Try
+    End Function
+
+    Public Function GiveIDofProduct(ByVal NameProduct As String) As Integer
+        Dim IDProduct As Integer
+        Dim Request As String
+        Dim Capture As String
+        Try
+            Connexion.Open()
+            Request = "SELECT * FROM t_produits WHERE `Nom` = """ & NameProduct & """;"
+
+            Dim Command As New MySqlCommand(Request, Connexion)
+            Command.ExecuteNonQuery()
+
+            Dim Reader As MySqlDataReader
+            Reader = Command.ExecuteReader
+
+            While Reader.Read
+                Capture = Reader.GetString(0)
+            End While
+
+            IDProduct = CType(Capture, Integer)
+            Connexion.Close()
+            Return IDProduct
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return -1
+        End Try
+    End Function
+
+    'On envoie Le produit et sa commande
+    Public Function CurrentDeliversiesClientsAdd(ByVal IDProduct As Integer, ByVal IDName As Integer, ByVal DeliveryTime As Date, ByVal DeliveryValue As Double, ByVal Reference As Integer, ByVal DeliveryPrice As Double, ByVal DeliveryQuantity As Integer) As Boolean
+        Dim Request As String
+        Try
+            Connexion.Open()
+            Request = "INSERT INTO `t_comcli`(`Reference`, `Prix`, `Quantite`, `Date_Depart`, `XID_Client`, `XID_Produit`) VALUES(" & Reference & "," & DeliveryPrice & "," & DeliveryQuantity & ",""" & DeliveryTime & """," & IDName & "," & IDProduct & ");"
+            Dim Command As New MySqlCommand(Request, Connexion)
+            Command.ExecuteNonQuery()
+            Connexion.Close()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return False
+        End Try
+        Connexion.Close()
+    End Function
+
+    Public Function CurrentDeliversiesProviderAdd(ByVal IDProduct As Integer, ByVal IDName As Integer, ByVal DeliveryTime As Date, ByVal DeliveryValue As Double, ByVal Reference As Integer, ByVal DeliveryPrice As Double, ByVal DeliveryQuantity As Integer) As Boolean
+        Dim Request As String
+        Try
+            Connexion.Open()
+            Request = "INSERT INTO `t_comfour`(`Reference`, `Prix`, `Quantite`, `Date_Depart`, `XID_Produit`) VALUES(" & Reference & "," & DeliveryPrice & "," & DeliveryQuantity & ",""" & DeliveryTime & """," & IDProduct & ");"
+            Dim Command As New MySqlCommand(Request, Connexion)
+            Command.ExecuteNonQuery()
+            Connexion.Close()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return False
+        End Try
+        Connexion.Close()
+    End Function
+
 End Class

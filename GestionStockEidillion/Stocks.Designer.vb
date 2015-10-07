@@ -101,6 +101,8 @@ Partial Class Form_Stocks
         Me.LB_NewClientDeliveryClient = New System.Windows.Forms.Label()
         Me.TB_NewDateClient = New System.Windows.Forms.TextBox()
         Me.LB_NewDateClient = New System.Windows.Forms.Label()
+        Me.TB_NewRefDeliveryClient = New System.Windows.Forms.TextBox()
+        Me.LB_NewRefDeliveryClient = New System.Windows.Forms.Label()
         Me.BT_ConfirmDeliveryClient = New System.Windows.Forms.Button()
         Me.TB_DeliveryNameClient = New System.Windows.Forms.TextBox()
         Me.LB_DeliveryNameClient = New System.Windows.Forms.Label()
@@ -113,8 +115,6 @@ Partial Class Form_Stocks
         Me.TB_LastDeliveryClient = New System.Windows.Forms.TextBox()
         Me.LB_LastDeliveryClient = New System.Windows.Forms.Label()
         Me.TP_Estimation = New System.Windows.Forms.TabPage()
-        Me.LB_NewRefDeliveryClient = New System.Windows.Forms.Label()
-        Me.TB_NewRefDeliveryClient = New System.Windows.Forms.TextBox()
         Me.TabC_Stock.SuspendLayout()
         Me.TP_StockShow.SuspendLayout()
         Me.TP_Provider.SuspendLayout()
@@ -170,7 +170,7 @@ Partial Class Form_Stocks
         'TB_LastDeliveryClientLive
         '
         Me.TB_LastDeliveryClientLive.Enabled = False
-        Me.TB_LastDeliveryClientLive.Location = New System.Drawing.Point(184, 82)
+        Me.TB_LastDeliveryClientLive.Location = New System.Drawing.Point(191, 82)
         Me.TB_LastDeliveryClientLive.Name = "TB_LastDeliveryClientLive"
         Me.TB_LastDeliveryClientLive.Size = New System.Drawing.Size(100, 20)
         Me.TB_LastDeliveryClientLive.TabIndex = 8
@@ -180,9 +180,9 @@ Partial Class Form_Stocks
         Me.LB_LastDeliveryClientLive.AutoSize = True
         Me.LB_LastDeliveryClientLive.Location = New System.Drawing.Point(6, 85)
         Me.LB_LastDeliveryClientLive.Name = "LB_LastDeliveryClientLive"
-        Me.LB_LastDeliveryClientLive.Size = New System.Drawing.Size(172, 13)
+        Me.LB_LastDeliveryClientLive.Size = New System.Drawing.Size(179, 13)
         Me.LB_LastDeliveryClientLive.TabIndex = 7
-        Me.LB_LastDeliveryClientLive.Text = "Date de la dernière livraison client :"
+        Me.LB_LastDeliveryClientLive.Text = "Date de la Dernière Livraison Client :"
         '
         'LB_InOutPut
         '
@@ -204,7 +204,7 @@ Partial Class Form_Stocks
         'TB_LastDeliveryProvider
         '
         Me.TB_LastDeliveryProvider.Enabled = False
-        Me.TB_LastDeliveryProvider.Location = New System.Drawing.Point(212, 50)
+        Me.TB_LastDeliveryProvider.Location = New System.Drawing.Point(221, 50)
         Me.TB_LastDeliveryProvider.Name = "TB_LastDeliveryProvider"
         Me.TB_LastDeliveryProvider.Size = New System.Drawing.Size(100, 20)
         Me.TB_LastDeliveryProvider.TabIndex = 2
@@ -222,9 +222,9 @@ Partial Class Form_Stocks
         Me.LB_LastDeliveryProviderLabel.AutoSize = True
         Me.LB_LastDeliveryProviderLabel.Location = New System.Drawing.Point(8, 53)
         Me.LB_LastDeliveryProviderLabel.Name = "LB_LastDeliveryProviderLabel"
-        Me.LB_LastDeliveryProviderLabel.Size = New System.Drawing.Size(198, 13)
+        Me.LB_LastDeliveryProviderLabel.Size = New System.Drawing.Size(207, 13)
         Me.LB_LastDeliveryProviderLabel.TabIndex = 4
-        Me.LB_LastDeliveryProviderLabel.Text = "Date de la dernière livraison fournisseur :"
+        Me.LB_LastDeliveryProviderLabel.Text = "Date de la Dernière Livraison Fournisseur :"
         '
         'LB_TextEstimation
         '
@@ -879,6 +879,22 @@ Partial Class Form_Stocks
         Me.LB_NewDateClient.TabIndex = 14
         Me.LB_NewDateClient.Text = "Date de Livraison Estimée :"
         '
+        'TB_NewRefDeliveryClient
+        '
+        Me.TB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 209)
+        Me.TB_NewRefDeliveryClient.Name = "TB_NewRefDeliveryClient"
+        Me.TB_NewRefDeliveryClient.Size = New System.Drawing.Size(131, 20)
+        Me.TB_NewRefDeliveryClient.TabIndex = 13
+        '
+        'LB_NewRefDeliveryClient
+        '
+        Me.LB_NewRefDeliveryClient.AutoSize = True
+        Me.LB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 184)
+        Me.LB_NewRefDeliveryClient.Name = "LB_NewRefDeliveryClient"
+        Me.LB_NewRefDeliveryClient.Size = New System.Drawing.Size(134, 13)
+        Me.LB_NewRefDeliveryClient.TabIndex = 12
+        Me.LB_NewRefDeliveryClient.Text = "Réf. Nouvelle Commande :"
+        '
         'BT_ConfirmDeliveryClient
         '
         Me.BT_ConfirmDeliveryClient.Location = New System.Drawing.Point(714, 71)
@@ -938,7 +954,7 @@ Partial Class Form_Stocks
         '
         'TB_LastDateClient
         '
-        Me.TB_LastDateClient.Location = New System.Drawing.Point(160, 43)
+        Me.TB_LastDateClient.Location = New System.Drawing.Point(211, 43)
         Me.TB_LastDateClient.Name = "TB_LastDateClient"
         Me.TB_LastDateClient.Size = New System.Drawing.Size(100, 20)
         Me.TB_LastDateClient.TabIndex = 3
@@ -948,9 +964,9 @@ Partial Class Form_Stocks
         Me.LB_LastDateClient.AutoSize = True
         Me.LB_LastDateClient.Location = New System.Drawing.Point(8, 46)
         Me.LB_LastDateClient.Name = "LB_LastDateClient"
-        Me.LB_LastDateClient.Size = New System.Drawing.Size(146, 13)
+        Me.LB_LastDateClient.Size = New System.Drawing.Size(197, 13)
         Me.LB_LastDateClient.TabIndex = 2
-        Me.LB_LastDateClient.Text = "Date estimée de la Livraison :"
+        Me.LB_LastDateClient.Text = "Date estimée de la Prochaine Livraison :"
         '
         'TB_LastDeliveryClient
         '
@@ -978,22 +994,6 @@ Partial Class Form_Stocks
         Me.TP_Estimation.TabIndex = 4
         Me.TP_Estimation.Text = "Stock Estimation"
         Me.TP_Estimation.UseVisualStyleBackColor = True
-        '
-        'LB_NewRefDeliveryClient
-        '
-        Me.LB_NewRefDeliveryClient.AutoSize = True
-        Me.LB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 184)
-        Me.LB_NewRefDeliveryClient.Name = "LB_NewRefDeliveryClient"
-        Me.LB_NewRefDeliveryClient.Size = New System.Drawing.Size(134, 13)
-        Me.LB_NewRefDeliveryClient.TabIndex = 12
-        Me.LB_NewRefDeliveryClient.Text = "Réf. Nouvelle Commande :"
-        '
-        'TB_NewRefDeliveryClient
-        '
-        Me.TB_NewRefDeliveryClient.Location = New System.Drawing.Point(6, 209)
-        Me.TB_NewRefDeliveryClient.Name = "TB_NewRefDeliveryClient"
-        Me.TB_NewRefDeliveryClient.Size = New System.Drawing.Size(131, 20)
-        Me.TB_NewRefDeliveryClient.TabIndex = 13
         '
         'Form_Stocks
         '

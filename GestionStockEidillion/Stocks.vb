@@ -143,7 +143,7 @@
         Next
     End Sub
 
-
+    'Donne la liste des fournisseurs
     Private Sub AddItemsCB_NewProductDeliveryProvider()
         Dim Products() As String
         Products = MySQLCom.GiveNamesOfProducts()
@@ -153,6 +153,7 @@
         Next
     End Sub
 
+    'Donne la liste des produits déjà enregistrés
     Private Sub AddItemsCB_NewProductDeliveryClient()
         Dim Products() As String
         Products = MySQLCom.GiveNamesOfProducts()
@@ -162,6 +163,7 @@
         Next
     End Sub
 
+    'Donne la liste des Clients déjà enregistrés
     Private Sub AddItemsCB_NewNewClient()
         Dim Clients() As String
         Clients = MySQLCom.GiveNamesOfClients()
@@ -248,5 +250,37 @@
         CB_NewProductDeliveryProvider.SelectedItem = MonItem.SubItems(0).Text
         TB_NewQuantityDeliveryProvider.Text = MonItem.SubItems(1).Text
         TB_NewPriceDeliveryProvider.Text = MonItem.SubItems(2).Text
+    End Sub
+
+    'Supprime la ligne sélectionnée dans la LV des produits 
+    Private Sub BT_DeleteDeliveryClient_Click(sender As Object, e As EventArgs) Handles BT_DeleteDeliveryClient.Click
+        Try
+            Dim MonItem As ListViewItem = LV_CurrentDeliveriesClient.SelectedItems(0)
+            MonItem.Remove()
+            TB_NewQuantityDeliveryClient.Text = ""
+            TB_NewPriceDeliveryClient.Text = ""
+        Catch ex As Exception
+            MessageBox.Show("Aucune Données à supprimer")
+        End Try
+
+    End Sub
+
+    Private Sub BT_DeleteDeliveryProvider_Click(sender As Object, e As EventArgs) Handles BT_DeleteDeliveryProvider.Click
+        Try
+            Dim MonItem As ListViewItem = LV_CurrentDeliveriesProvider.SelectedItems(0)
+            MonItem.Remove()
+            TB_NewQuantityDeliveryProvider.Text = ""
+            TB_NewPriceDeliveryProvider.Text = ""
+        Catch ex As Exception
+            MessageBox.Show("Aucunes Données à supprimer")
+        End Try
+    End Sub
+
+    Private Sub BT_ConfirmNewDeliveryClient_Click(sender As Object, e As EventArgs) Handles BT_ConfirmNewDeliveryClient.Click
+        Try
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class
